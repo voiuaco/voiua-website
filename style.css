@@ -1381,42 +1381,179 @@ textarea {
   }
 
 
-  /* CLIENTS */
+  /* =========================================================
+   CLIENTS — COMPACT VERSION
+   ========================================================= */
+
+.clients-section {
+  padding: 65px 0 70px;
+  background: var(--ivory);
+  overflow: hidden;
+}
+
+.clients-heading {
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.clients-heading h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  line-height: 1;
+  font-weight: 600;
+  color: var(--emerald);
+}
+
+
+/* LOGO MARQUEE */
+
+.logo-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0 5px;
+}
+
+.logo-marquee::before,
+.logo-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 120px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.logo-marquee::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--ivory),
+    rgba(253, 251, 247, 0)
+  );
+}
+
+.logo-marquee::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--ivory),
+    rgba(253, 251, 247, 0)
+  );
+}
+
+.logo-track {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  animation: logo-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
+}
+
+.client-logo {
+  width: 170px;
+  min-width: 170px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.client-logo img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 150px;
+  max-height: 60px;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.client-logo:hover img {
+  transform: scale(1.04);
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
 
   .clients-section {
-    padding:
-      85px 0 95px;
+    padding: 55px 0 60px;
   }
 
   .clients-heading {
-    margin-bottom: 38px;
+    margin-bottom: 20px;
   }
 
   .logo-track {
-    gap: 55px;
+    gap: 50px;
   }
 
   .client-logo {
-    width: 150px;
-
-    min-width: 150px;
-
-    height: 80px;
+    width: 145px;
+    min-width: 145px;
+    height: 70px;
   }
 
   .client-logo img {
-    max-width: 135px;
+    max-width: 130px;
+    max-height: 55px;
+  }
+}
 
-    max-height: 65px;
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .clients-section {
+    padding: 48px 0 55px;
+  }
+
+  .clients-heading {
+    margin-bottom: 18px;
+  }
+
+  .clients-heading h2 {
+    font-size: 2.8rem;
+  }
+
+  .logo-marquee {
+    padding: 8px 0 0;
+  }
+
+  .logo-track {
+    gap: 38px;
+    animation-duration: 22s;
+  }
+
+  .client-logo {
+    width: 120px;
+    min-width: 120px;
+    height: 62px;
+  }
+
+  .client-logo img {
+    max-width: 105px;
+    max-height: 50px;
   }
 
   .logo-marquee::before,
   .logo-marquee::after {
-    width: 80px;
+    width: 50px;
   }
-
 }
-
 
 /* =========================================================
    MOBILE
