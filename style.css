@@ -632,3 +632,15 @@ a {
   }
 
 }
+.brand-logo {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo img {
+  display: block;
+  width: auto;
+  height: 68px;
+  object-fit: contain;
+}
+
